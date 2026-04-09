@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang=""vi>
+    <head>
+        <meta charset="UTF-8">
+        <title>Unit Converter bằng Python</title>
+        <style>
+            body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px;}
+            .converter-box { border: 1px solid #ccc; padding: 20px; display: inline-block; border-radius: 10px;}
+            input, select, button {padding: 8px; margin: 5px;}
+            .result { margin-top: 20px; font-weight: bold; font-size: 1.2em; color: green;}
+        </style>
+    </head>
+    <body>
+        <div class="converter-box">
+            <h2>Chuyển đổi Độ dài</h2>
+            <form method="POST">
+                <input type="number" step="any" name="amount" placeholder="Nhập số..." required value="1">
+                
+                <select name="from_unit">
+                    <option value="meter">Meter (m)</option>
+                    <option value="kilometer">Kilometer (km)</option>
+                    <option value="centimeter">Centimeter (cm)</option>
+                </select>
+
+                <span>sang</span>
+
+                <select name="to_unit">
+                    <option value="meter">Meter (m)</option>
+                    <option value="kilometer">Kilometer (km)</option>
+                    <option value="centimeter">Centimeter (cm)</option>
+                </select>
+            </form>
+
+            {% if result %}
+                <div class="result">{{result}}</div>
+            {% endif%}
+        </div>
+    </body>
+</html>
